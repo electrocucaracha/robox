@@ -2535,6 +2535,42 @@
       ]
     },
     {
+      "scripts": [
+        "scripts/ubuntu2404/apt.sh",
+        "scripts/ubuntu2404/floppy.sh",
+        "scripts/ubuntu2404/fixkvp.sh",
+        "scripts/ubuntu2404/network.sh"
+      ],
+      "type": "shell",
+      "timeout": "120m",
+      "start_retry_timeout": "15m",
+      "expect_disconnect": "true",
+      "only": [
+        "generic-ubuntu2404-libvirt-x64"
+      ]
+    },
+    {
+      "scripts": [
+        "scripts/ubuntu2404/vagrant.sh",
+        "scripts/ubuntu2404/profile.sh",
+        "scripts/ubuntu2404/motd.sh",
+        "scripts/ubuntu2404/fixtty.sh",
+        "scripts/ubuntu2404/virtualbox.sh",
+        "scripts/ubuntu2404/parallels.sh",
+        "scripts/ubuntu2404/vmware.sh",
+        "scripts/ubuntu2404/qemu.sh",
+        "scripts/ubuntu2404/cleanup.sh"
+      ],
+      "type": "shell",
+      "timeout": "120m",
+      "pause_before": "120s",
+      "start_retry_timeout": "15m",
+      "expect_disconnect": "true",
+      "only": [
+        "generic-ubuntu2404-libvirt-x64"
+      ]
+    },
+    {
       "type": "shell",
       "timeout": "120m",
       "scripts": [
@@ -3149,6 +3185,41 @@
       ]
     },
     {
+      "scripts": [
+        "scripts/debian13/apt.sh",
+        "scripts/debian13/network.sh"
+      ],
+      "type": "shell",
+      "timeout": "120m",
+      "start_retry_timeout": "15m",
+      "expect_disconnect": "true",
+      "only": [
+        "generic-debian13-libvirt-x64"
+      ]
+    },
+    {
+      "scripts": [
+        "scripts/debian13/floppy.sh",
+        "scripts/debian13/profile.sh",
+        "scripts/debian13/vagrant.sh",
+        "scripts/debian13/motd.sh",
+        "scripts/debian13/fixtty.sh",
+        "scripts/debian13/virtualbox.sh",
+        "scripts/debian13/parallels.sh",
+        "scripts/debian13/vmware.sh",
+        "scripts/debian13/qemu.sh",
+        "scripts/debian13/cleanup.sh"
+      ],
+      "type": "shell",
+      "timeout": "120m",
+      "pause_before": "120s",
+      "start_retry_timeout": "15m",
+      "expect_disconnect": "true",
+      "only": [
+        "generic-debian13-libvirt-x64"
+      ]
+    },
+    {
       "type": "shell",
       "timeout": "120m",
       "scripts": [
@@ -3371,6 +3442,56 @@
       "expect_disconnect": "true",
       "only": [
         "generic-fedora39-libvirt-x64"
+      ]
+    },
+    {
+      "type": "shell",
+      "timeout": "120m",
+      "scripts": [
+        "scripts/fedora40/fixdns.sh",
+        "scripts/fedora40/hostname.sh",
+        "scripts/fedora40/dnf.sh"
+      ],
+      "start_retry_timeout": "15m",
+      "expect_disconnect": "true",
+      "only": [
+        "generic-fedora40-libvirt-x64"
+      ]
+    },
+    {
+      "type": "shell",
+      "timeout": "120m",
+      "scripts": [
+        "scripts/fedora40/fixtmp.sh",
+        "scripts/fedora40/base.sh"
+      ],
+      "pause_before": "120s",
+      "start_retry_timeout": "15m",
+      "expect_disconnect": "true",
+      "only": [
+        "generic-fedora40-libvirt-x64"
+      ]
+    },
+    {
+      "type": "shell",
+      "timeout": "120m",
+      "scripts": [
+        "scripts/fedora40/kernel.sh",
+        "scripts/fedora40/updatedb.sh",
+        "scripts/fedora40/vga.sh",
+        "scripts/fedora40/virtualbox.sh",
+        "scripts/fedora40/parallels.sh",
+        "scripts/fedora40/vmware.sh",
+        "scripts/fedora40/qemu.sh",
+        "scripts/fedora40/vagrant.sh",
+        "scripts/fedora40/tuning.sh",
+        "scripts/fedora40/cleanup.sh"
+      ],
+      "pause_before": "120s",
+      "start_retry_timeout": "15m",
+      "expect_disconnect": "true",
+      "only": [
+        "generic-fedora40-libvirt-x64"
       ]
     },
     {
@@ -5947,7 +6068,7 @@
       "memory": 2048,
       "http_directory": "http",
       "headless": true,
-      "iso_url": "https://ftp5.gwdg.de/pub/linux/rocky/8.9/isos/x86_64/Rocky-8.9-x86_64-boot.iso",
+      "iso_url": "https://dl.rockylinux.org/vault/rocky/8.9/isos/x86_64/Rocky-8.9-x86_64-boot.iso",
       "iso_checksum": "sha256:88baefca6f0e78b53613773954e0d7c2d8d28ad863f40623db75c40f505b5105",
       "ssh_username": "root",
       "ssh_password": "vagrant",
@@ -6217,8 +6338,8 @@
       "memory": 2048,
       "http_directory": "http",
       "headless": true,
-      "iso_url": "https://cdimage.debian.org/cdimage/archive/11.8.0/amd64/iso-cd/debian-11.8.0-amd64-netinst.iso",
-      "iso_checksum": "sha256:d7a74813a734083df30c8d35784926deaa36bc41e5c0766388e9f591ab056b72",
+      "iso_url": "https://cdimage.debian.org/cdimage/archive/11.11.0/amd64/iso-cd/debian-11.11.0-amd64-netinst.iso",
+      "iso_checksum": "sha256:cd5b2a6fc22050affa1d141adb3857af07e94ff886dca1ce17214e2761a3b316",
       "ssh_username": "root",
       "ssh_password": "vagrant",
       "ssh_port": 22,
@@ -6477,8 +6598,56 @@
       "memory": 2048,
       "http_directory": "http",
       "headless": true,
-      "iso_url": "https://releases.ubuntu.com/22.04/ubuntu-22.04.3-live-server-amd64.iso",
-      "iso_checksum": "sha256:a4acfda10b18da50e2ec50ccaf860d7f20b389df8765611142305c0e911d16fd",
+      "iso_url": "https://releases.ubuntu.com/22.04/ubuntu-22.04.5-live-server-amd64.iso",
+      "iso_checksum": "sha256:9bc6028870aef3f74f4e16b900008179e78b130e6b0b9a140635434a46aa98b0",
+      "ssh_username": "root",
+      "ssh_password": "vagrant",
+      "ssh_port": 22,
+      "ssh_handshake_attempts": 1000,
+      "ssh_timeout": "3600s",
+      "shutdown_command": "echo 'vagrant' | sudo -S shutdown -P now"
+    },
+    {
+      "type": "qemu",
+      "name": "generic-ubuntu2404-libvirt-x64",
+      "vm_name": "generic-ubuntu2404-libvirt-x64",
+      "output_directory": "output/generic-ubuntu2404-libvirt-x64",
+      "qemu_binary": "qemu-system-x86_64",
+      "boot_wait": "10s",
+      "boot_keygroup_interval": "1s",
+      "boot_command": [
+        "<tab><wait><tab><wait><tab><wait><tab><wait><tab><wait><tab><wait>",
+        "<tab><wait><tab><wait><tab><wait><tab><wait><tab><wait><tab><wait>",
+        "<tab><wait><tab><wait><tab><wait><tab><wait><tab><wait><tab><wait>",
+        "<tab><wait><tab><wait><tab><wait><tab><wait><tab><wait><tab><wait>",
+        "<tab><wait><tab><wait><tab><wait><tab><wait><tab><wait><tab><wait>",
+        "<tab><wait><tab><wait><tab><wait><tab><wait><tab><wait><tab><wait>",
+        "<tab><wait><tab><wait><tab><wait><tab><wait><tab><wait><tab><wait>",
+        "<tab><wait><tab><wait><tab><wait><tab><wait><tab><wait><tab><wait>",
+        "<tab><wait><tab><wait><tab><wait><tab><wait><tab><wait><tab><wait>",
+        "<tab><wait><tab><wait><tab><wait><tab><wait><tab><wait><tab><wait>",
+        "c<wait10>",
+        "set gfxpayload=keep<enter><wait10>",
+        "linux /casper/vmlinuz autoinstall quiet net.ifnames=0 biosdevname=0 ",
+        "cloud-config-url=\"http://{{.HTTPIP}}:{{.HTTPPort}}/generic.ubuntu2204.vagrant.cfg\" --- <enter><wait10>",
+        "initrd /casper/initrd<enter><wait10>",
+        "boot<enter>"
+      ],
+      "format": "qcow2",
+      "disk_size": "131072",
+      "disk_discard": "unmap",
+      "disk_detect_zeroes": "on",
+      "disk_cache": "unsafe",
+      "disk_image": false,
+      "disk_compression": true,
+      "disk_interface": "virtio-scsi",
+      "net_device": "virtio-net",
+      "cpus": 2,
+      "memory": 2048,
+      "http_directory": "http",
+      "headless": true,
+      "iso_url": "https://releases.ubuntu.com/24.04/ubuntu-24.04.3-live-server-amd64.iso",
+      "iso_checksum": "sha256:c3514bf0056180d09376462a7a1b4f213c1d6e8ea67fae5c25099c6fd3d8274b",
       "ssh_username": "root",
       "ssh_password": "vagrant",
       "ssh_port": 22,
@@ -6785,8 +6954,8 @@
       "memory": 2048,
       "http_directory": "http",
       "headless": true,
-      "iso_url": "https://ftp5.gwdg.de/pub/linux/rocky/9.3/isos/x86_64/Rocky-9.3-x86_64-boot.iso",
-      "iso_checksum": "sha256:eb096f0518e310f722d5ebd4c69f0322df4fc152c6189f93c5c797dc25f3d2e1",
+      "iso_url": "https://dl.rockylinux.org/vault/rocky/9.6/isos/x86_64/Rocky-9.6-x86_64-boot.iso",
+      "iso_checksum": "sha256:0fad8d8b19a94a0222ea37152cdf5601229fe0178b651dc476e1cba41d2e6067",
       "ssh_username": "root",
       "ssh_password": "vagrant",
       "ssh_port": 22,
@@ -7104,8 +7273,8 @@
       "memory": 2048,
       "http_directory": "http",
       "headless": true,
-      "iso_url": "https://cdimage.debian.org/cdimage/release/12.4.0/amd64/iso-cd/debian-12.4.0-amd64-netinst.iso",
-      "iso_checksum": "sha256:64d727dd5785ae5fcfd3ae8ffbede5f40cca96f1580aaa2820e8b99dae989d94",
+      "iso_url": "https://cdimage.debian.org/cdimage/archive/12.12.0/amd64/iso-cd/debian-12.12.0-amd64-netinst.iso",
+      "iso_checksum": "sha256:dfc30e04fd095ac2c07e998f145e94bb8f7d3a8eca3a631d2eb012398deae531",
       "ssh_username": "root",
       "ssh_password": "vagrant",
       "ssh_port": 22,
@@ -7114,6 +7283,51 @@
       "shutdown_command": "echo 'vagrant' | sudo -S shutdown -P now"
     },
     {
+    {
+      "type": "qemu",
+      "name": "generic-debian13-libvirt-x64",
+      "vm_name": "generic-debian13-libvirt-x64",
+      "output_directory": "output/generic-debian13-libvirt-x64",
+      "qemu_binary": "qemu-system-x86_64",
+      "boot_wait": "10s",
+      "boot_keygroup_interval": "1s",
+      "boot_command": [
+        "<esc><wait><esc><wait><esc><wait><esc><wait><esc><wait><esc><wait>",
+        "<esc><wait><esc><wait><esc><wait><esc><wait><esc><wait><esc><wait>",
+        "<esc><wait><esc><wait><esc><wait><esc><wait><esc><wait><esc><wait>",
+        "<esc><wait><esc><wait><esc><wait><esc><wait><esc><wait><esc><wait>",
+        "<esc><wait><esc><wait><esc><wait><esc><wait><esc><wait><esc><wait>",
+        "<esc><wait><esc><wait><esc><wait><esc><wait><esc><wait><esc><wait>",
+        "<esc><wait><esc><wait><esc><wait><esc><wait><esc><wait><esc><wait>",
+        "<esc><wait><esc><wait><esc><wait><esc><wait><esc><wait><esc><wait>",
+        "<esc><wait><esc><wait><esc><wait><esc><wait><esc><wait><esc><wait>",
+        "<esc><wait><esc><wait><esc><wait><esc><wait><esc><wait><esc><wait>",
+        "/install.amd/vmlinuz auto=true priority=critical vga=788 initrd=/install.amd/gtk/initrd.gz --- quiet ",
+        "ipv6.disable_ipv6=1 net.ifnames=0 biosdevname=0 preseed/url=http://{{.HTTPIP}}:{{.HTTPPort}}/generic.debian12.vagrant.cfg ",
+        "<enter>"
+      ],
+      "format": "qcow2",
+      "disk_size": "131072",
+      "disk_discard": "unmap",
+      "disk_detect_zeroes": "on",
+      "disk_cache": "unsafe",
+      "disk_image": false,
+      "disk_compression": true,
+      "disk_interface": "virtio-scsi",
+      "net_device": "virtio-net",
+      "cpus": 2,
+      "memory": 2048,
+      "http_directory": "http",
+      "headless": true,
+      "iso_url": "https://cdimage.debian.org/cdimage/release/13.1.0/amd64/iso-cd/debian-13.1.0-amd64-netinst.iso",
+      "iso_checksum": "sha256:658b28e209b578fe788ec5867deebae57b6aac5fce3692bbb116bab9c65568b3",
+      "ssh_username": "root",
+      "ssh_password": "vagrant",
+      "ssh_port": 22,
+      "ssh_handshake_attempts": 1000,
+      "ssh_timeout": "3600s",
+      "shutdown_command": "echo 'vagrant' | sudo -S shutdown -P now"
+    },
       "type": "qemu",
       "name": "generic-alpine318-libvirt-x64",
       "vm_name": "generic-alpine318-libvirt-x64",
@@ -7448,8 +7662,58 @@
       "memory": 2048,
       "http_directory": "http",
       "headless": true,
-      "iso_url": "https://dl.fedoraproject.org/pub/fedora/linux/releases/39/Server/x86_64/iso/Fedora-Server-netinst-x86_64-39-1.5.iso",
-      "iso_checksum": "sha256:61576ae7170e35210f03aae3102048f0a9e0df7868ac726908669b4ef9cc22e9",
+      "iso_url": "https://archives.fedoraproject.org/pub/archive/fedora/linux/releases/39/Server/x86_64/iso/Fedora-Server-dvd-x86_64-39-1.5.iso",
+      "iso_checksum": "sha256:2755cdff6ac6365c75be60334bf1935ade838fc18de53d4c640a13d3e904f6e9",
+      "ssh_username": "root",
+      "ssh_password": "vagrant",
+      "ssh_port": 22,
+      "ssh_handshake_attempts": 1000,
+      "ssh_timeout": "3600s",
+      "shutdown_command": "echo 'vagrant' | sudo -S shutdown -P now"
+    },
+    {
+      "type": "qemu",
+      "name": "generic-fedora40-libvirt-x64",
+      "vm_name": "generic-fedora40-libvirt-x64",
+      "output_directory": "output/generic-fedora40-libvirt-x64",
+      "qemu_binary": "qemu-system-x86_64",
+      "boot_wait": "20s",
+      "boot_keygroup_interval": "1s",
+      "boot_command": [
+        "c<wait>",
+        "insmod all_video<enter><wait>",
+        "set gfxpayload=keep<enter><wait>",
+        "insmod increment<enter><wait>",
+        "insmod xfs<enter><wait>",
+        "insmod diskfilter<enter><wait>",
+        "insmod mdraid1x<enter><wait>",
+        "insmod fat<enter><wait>",
+        "insmod blscfg<enter><wait>",
+        "insmod gzio<enter><wait>",
+        "insmod part_gpt<enter><wait>",
+        "insmod ext2<enter><wait>",
+        "insmod chain<enter><wait>",
+        "search --no-floppy --set=root -l 'Fedora-S-dvd-x86_64-40'<enter><wait>",
+        "linux /images/pxeboot/vmlinuz inst.stage2=hd:LABEL=Fedora-S-dvd-x86_64-40 rd.live.check ",
+        "net.ifnames=0 inst.text inst.ks=http://{{.HTTPIP}}:{{.HTTPPort}}/generic.fedora40.vagrant.x64.ks<enter><wait>",
+        "initrd /images/pxeboot/initrd.img<enter><wait10>",
+        "boot<enter><wait>"
+      ],
+      "format": "qcow2",
+      "disk_size": "131072",
+      "disk_discard": "unmap",
+      "disk_detect_zeroes": "on",
+      "disk_cache": "unsafe",
+      "disk_image": false,
+      "disk_compression": true,
+      "disk_interface": "virtio-scsi",
+      "net_device": "virtio-net",
+      "cpus": 2,
+      "memory": 2048,
+      "http_directory": "http",
+      "headless": true,
+      "iso_url": "https://archives.fedoraproject.org/pub/archive/fedora/linux/releases/40/Server/x86_64/iso/Fedora-Server-dvd-x86_64-40-1.14.iso",
+      "iso_checksum": "sha256:32d9ab1798fc8106a0b06e873bdcd83a3efea8412c9401dfe4097347ed0cfc65",
       "ssh_username": "root",
       "ssh_password": "vagrant",
       "ssh_port": 22,
